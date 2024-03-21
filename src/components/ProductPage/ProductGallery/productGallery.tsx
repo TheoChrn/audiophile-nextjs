@@ -1,6 +1,7 @@
 import React from "react";
 import { Product } from "@/types/types";
 import Image from "next/image";
+import { imageLoader } from "@/lib/utils";
 
 const ProductGallery = ({
   product,
@@ -10,7 +11,6 @@ const ProductGallery = ({
   device: "mobile" | "tablet" | "desktop";
 }) => {
   const pictures = Array.from(Object.values(product.gallery));
-
 
   return (
     <section>
@@ -29,6 +29,7 @@ const ProductGallery = ({
                 height={1}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="size-full object-cover"
+                loader={imageLoader}
               />
             </figure>
           </li>

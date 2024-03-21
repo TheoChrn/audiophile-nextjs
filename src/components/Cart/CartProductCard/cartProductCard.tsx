@@ -1,4 +1,5 @@
 
+import { imageLoader } from "@/lib/utils";
 import { CartProduct } from "@/types/types";
 import Image from "next/image";
 import React from "react";
@@ -23,6 +24,7 @@ const CartProductCard = ({
           width={size || 64}
           height={size || 64}
           className="rounded"
+          loader={imageLoader}
         />
       </figure>
       <div className="flex flex-col text-start">

@@ -1,5 +1,6 @@
 import ArrowIcon from "@/components/Icons/arrowIcon";
 import LinkButton from "@/components/ui/linkButton";
+import { imageLoader } from "@/lib/utils";
 import Image from "next/image";
 
 const NavigationCard = () => {
@@ -43,7 +44,6 @@ const NavigationCard = () => {
                     alt="Image produit"
                     height={card.height}
                     width={card.width}
-                    className=""
                   />
                 </figure>
                 <span className="mt-[8.6rem] text-base font-bold">

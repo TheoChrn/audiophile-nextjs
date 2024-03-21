@@ -19,3 +19,8 @@ export const showToast = (type: 'success' | 'error', message: string | null) => 
 }
 
 
+
+export const imageLoader = ({ src, width, quality }: ImageLoaderProps) => {
+  return `http://localhost:3000/${src}?w=${width}&q=${quality || 75}`;
+};
+

@@ -1,6 +1,7 @@
 import useFindDevice from "@/hooks/useFindDevice";
+import { imageLoader } from "@/lib/utils";
 import { Product } from "@/types/types";
-import Image from "next/image";
+import Image, { ImageLoader, ImageLoaderProps } from "next/image";
 
 const ProductCard = ({
   product,
@@ -26,6 +27,7 @@ const ProductCard = ({
             alt="image"
             fill
             className="object-cover"
+            loader={imageLoader}
           />
         </figure>
         <div className="flex flex-col justify-center gap-y-small text-start lg:gap-y-16">

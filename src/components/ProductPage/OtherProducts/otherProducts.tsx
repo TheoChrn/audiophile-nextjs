@@ -1,4 +1,5 @@
 import LinkButton from "@/components/ui/linkButton";
+import { imageLoader } from "@/lib/utils";
 import { Product } from "@/types/types";
 import Image from "next/image";
 import React from "react";
@@ -26,6 +27,7 @@ const OtherProducts = ({
                   fill
                   sizes="33vw"
                   className="object-cover"
+                  loader={imageLoader}
                 />
               </figure>
               <h3 className="text-h6">{product.name}</h3>
