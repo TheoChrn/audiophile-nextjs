@@ -11,7 +11,7 @@ This is a solution to the [Audiophile e-commerce website challenge on Frontend M
 - [My process](#my-process)
   - [Built with](#built-with)
 - [Author](#author)
-- 
+
 ## Overview
 
 ### The challenge
