@@ -38,7 +38,7 @@ Users should be able to:
 
 ### Screenshot
 
-!['./assets/screenshots/Screenshot 2024-03-21 at 12-20-33 Create Next App.png'](./screenshot.jpg)
+!['/assets/screenshots/Screenshot 2024-03-21 at 12-20-33 Create Next App.png'](./screenshot.jpg)
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
