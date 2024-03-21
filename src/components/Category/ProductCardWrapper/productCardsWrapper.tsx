@@ -31,9 +31,7 @@ const ProductCardsWrapper = ({ category }: { category: string }) => {
   return (
     <>
       {products.map((product) => (
-        <>
-          <ProductCardWithButton key={product.id} product={product} />
-        </>
+        <ProductCardWithButton key={product.id} product={product} />
       ))}
     </>
   );
