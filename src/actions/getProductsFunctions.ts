@@ -1,5 +1,7 @@
+import { apiUrl } from "@/lib/apiurl"
+
 export const getProductsByCategory = (category: string) => {
-  return fetch(`http://localhost:3000/api/categories/${category}`, {
+  return fetch(`${apiUrl}/categories/${category}`, {
     method: "GET",
     cache:"no-store"
   }
@@ -11,11 +13,13 @@ export const getProductsByCategory = (category: string) => {
     return result
   }
   )
-  .catch((err) =>  new Error('Impossible de récupérer les données'))
+  .catch((err) =>  {
+    throw new Error('Failed to fetch data')
+  })
 }
 
 export const getProduct = (slug: string) => {
-  return fetch(`http://localhost:3000/api/products/${slug}`, {
+  return fetch(`${apiUrl}/products/${slug}`, {
     method: "GET",
     cache:"no-store",
     headers: {
@@ -31,7 +35,7 @@ export const getProduct = (slug: string) => {
   }
   )
   .catch((err) => {
-    throw new Error('Impossible de récupérer les données')})
+    throw new Error('Failed to fetchData')})
 }
 
 

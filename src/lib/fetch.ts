@@ -1,6 +1,8 @@
+import { apiUrl } from "./apiurl";
+
 export const deleteCookie = async () => {
    return fetch(
-    "http://localhost:3000/api/cart/deleteCart",
+    `${apiUrl}/cart/deleteCart`,
     {
       method: "GET",
       cache: "no-cache",

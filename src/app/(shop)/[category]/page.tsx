@@ -34,12 +34,13 @@ export default async function Category({
       queryKey: ["product", category],
       queryFn: () => getProduct(category),
     });
+
     const product = queryClient.getQueryData<Product>(["product", category]);
 
-    if (!product) {
-      notFound();
-    } else {
+    if (product) {
       redirect(`${product.category}/${product.slug}`);
+    } else {
+      notFound();
     }
   }
 
