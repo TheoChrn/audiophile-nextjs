@@ -7,8 +7,8 @@ export default async function Home() {
   return (
     <>
       <HeroBanner />
-      <main className="mb-48 lg:mb-64">
-        <Wrapper className="grid gap-48">
+      <main className="mb-48 lg:mb-64 mt-[9.2rem] md:mt-[14.8rem] lg:mt-[20rem]">
+        <Wrapper className="grid gap-y-[12rem] md:gap-y-[9.6rem] lg:gap-y-[16.8rem]">
           <NavigationCard />
           <LastProducts />
         </Wrapper>

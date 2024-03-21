@@ -10,7 +10,6 @@ import {
   QueryClient,
   dehydrate,
 } from "@tanstack/react-query";
-import { notFound } from "next/navigation";
 
 const Order = async () => {
   const queryClient = new QueryClient();
@@ -25,7 +24,7 @@ const Order = async () => {
   if (!cart || cart.length === 0) {
     return (
       <>
-        <main>
+        <main className="">
           <Wrapper className="mb-48 mt-[6.4rem] grid gap-y-[8.8rem] md:gap-y-48 lg:mb-64 lg:gap-y-64">
             <div className="flex min-h-[calc(50svh_-_9rem)] flex-col items-center justify-center gap-medium text-base">
               <h1 className="sr-only text-center text-h1 text-accent">Cart</h1>
@@ -79,13 +78,13 @@ const Order = async () => {
   const dehydratedState = dehydrate(queryClient);
 
   return (
-    <Wrapper>
-      <main className="relative my-56 flex flex-col gap-y-medium lg:flex-row lg:gap-x-12">
+    <main className="bg-card py-56 ">
+      <Wrapper className="relative flex flex-col gap-y-medium lg:flex-row lg:gap-x-12">
         <HydrationBoundary state={dehydratedState}>
           <OrderForm cartProducts={filteredProductsWithQuantities} />
         </HydrationBoundary>
-      </main>
-    </Wrapper>
+      </Wrapper>
+    </main>
   );
 };
 

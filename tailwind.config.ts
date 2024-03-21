@@ -99,10 +99,14 @@ const config = {
         '100': '100ms',
         '200': '200ms',
         '300': '300ms',
+        '350': '350ms',
         '400': '400ms',
+        '450': '450ms',
         '500': '500ms',
+        '550': '550ms',
         '600': '600ms',
         '700': '700ms',
+        '750': '750ms',
         '800': '800ms',
         '900': '900ms',
         '1000': '1000ms'
@@ -120,6 +124,18 @@ const config = {
         "accordion-up": {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
+        },
+        "fade-in-top": {
+          from: { transform: "translateY(-.8rem)", opacity: "0" },
+          to: { transform: "translateY(0%)",  opacity: "1" },
+        },
+        "fade-in-left": {
+          from: { transform: "translateX(-.9rem)", opacity: "0" },
+          to: { transform: "translateX(0%)",  opacity: "1" },
+        },
+        "grow-bar": { 
+          from: { transform: "scale(0)" },
+          to: { transform: "scale(1)" }
         },
         "grow":  {
           '0%, 100%': { transform: 'scale(1)' },
@@ -150,10 +166,13 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "beatsm": "beatsm 1s infinite",
-        "beat": "beat 1s  infinite",
-        "beatlg": "beatlg 1s  infinite",
-        "grow": "grow 1s  infinite",
+        "beatsm": "beatsm 1.3s infinite",
+        "beat": "beat 1.3s  infinite",
+        "beatlg": "beatlg 1.3s  infinite",
+        "grow": "grow 1.3s  infinite",
+        "fade-in-top": "fade-in-top .5s ease-in-out forwards",
+        "fade-in-left": "fade-in-left .5s ease-in-out forwards",
+        "grow-bar": "grow-bar .5s linear forwards",
       },
     },
   },

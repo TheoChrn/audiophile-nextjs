@@ -10,7 +10,7 @@ export default function Layout({
   return (
     <>
       {children}
-      <Wrapper className="mb-48 mt-[17.2rem] grid gap-48 lg:my-64 lg:gap-y-64">
+      <Wrapper className="mb-48 mt-[17.2rem] lg:mt-[24rem] grid gap-[12rem] lg:my-64 md:gap-y-[16rem]">
         <NavigationCard />
         <About />
       </Wrapper>

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 const Wrapper = ({
@@ -8,11 +10,7 @@ const Wrapper = ({
   className?: string;
 }) => {
   return (
-    <div
-      className={`container custom:px-0  ${className}`}
-    >
-      {children}
-    </div>
+    <div className={`container custom:px-0  ${className}`}>{children}</div>
   );
 };
 

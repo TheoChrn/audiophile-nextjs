@@ -3,17 +3,12 @@ import React from "react";
 import ProductCard from "./productCard";
 import LinkButton from "../ui/linkButton";
 
-const ProductCardWithButton = ({
-  product,
-  index,
-}: {
-  product: Product;
-  index: number;
-}) => {
+const ProductCardWithButton = ({ product }: { product: Product }) => {
   return (
     <ProductCard
       product={product}
-      className={index % 2 === 0 ? "flex-row" : "flex-row-reverse"}
+      className={`lg:even:flex-row-reverse lg:odd:flex-row`}
+      textAlignment="text-center items-center lg:items-start lg:text-start"
     >
       <LinkButton
         variant="accent"

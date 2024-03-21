@@ -29,40 +29,38 @@ const NavigationCard = () => {
     },
   ];
   return (
-    <section>
-      <menu className="flex flex-wrap justify-between gap-y-[6.8rem]  uppercase">
-        {cards.map((card, index) => {
-          return (
-            <li
-              key={index}
-              className="relative flex-[0_0_100%] rounded bg-card md:flex-[0_0_32%]"
-            >
-              <div className="relative flex flex-col items-center justify-center gap-y-[1.7rem] py-12 ">
-                <figure className="absolute translate-y-[-55%]">
-                  <Image
-                    src={card.imageUrl}
-                    alt="Image produit"
-                    height={card.height}
-                    width={card.width}
-                  />
-                </figure>
-                <span className="mt-[8.6rem] text-base font-bold">
-                  {card.title}
-                </span>
-                <LinkButton
-                  href={card.url}
-                  variant="nav"
-                  customClassName="flex gap-[1.3rem] items-center hover:text-accent text-subtitle leading-subtitle tracking-subtitle hover:pr-small"
-                >
-                  <span>shop</span>
-                  <ArrowIcon />
-                </LinkButton>
-              </div>
-            </li>
-          );
-        })}
-      </menu>
-    </section>
+    <menu className="flex flex-wrap justify-between gap-y-[6.8rem]  uppercase">
+      {cards.map((card, index) => {
+        return (
+          <li
+            key={index}
+            className="relative flex-[0_0_100%] rounded bg-card md:flex-[0_0_32%]"
+          >
+            <div className="relative flex flex-col items-center justify-center gap-y-[1.7rem] py-12 ">
+              <figure className="absolute translate-y-[-55%]">
+                <Image
+                  src={card.imageUrl}
+                  alt={`Image produit ${card.title}`}
+                  height={card.height}
+                  width={card.width}
+                />
+              </figure>
+              <span className="mt-[8.6rem] text-base font-bold">
+                {card.title}
+              </span>
+              <LinkButton
+                href={card.url}
+                variant="nav"
+                customClassName="flex gap-[1.3rem] items-center hover:text-accent text-subtitle leading-subtitle tracking-subtitle hover:pr-small"
+              >
+                <span>shop</span>
+                <ArrowIcon />
+              </LinkButton>
+            </div>
+          </li>
+        );
+      })}
+    </menu>
   );
 };
 
