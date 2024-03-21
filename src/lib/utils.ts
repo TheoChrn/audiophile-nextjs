@@ -1,4 +1,5 @@
 import { type ClassValue, clsx } from "clsx"
+import { ImageLoaderProps } from "next/image";
 import { toast } from "sonner";
 import { twMerge } from "tailwind-merge"
 
