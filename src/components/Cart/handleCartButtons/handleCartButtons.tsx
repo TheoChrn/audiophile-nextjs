@@ -35,7 +35,7 @@ const HandleCartButtons = ({ product }: { product: Product }) => {
   };
 
   return (
-    <div className="flex gap-x-[1.6rem]">
+    <div className="flex flex-wrap gap-[1.6rem]">
       <CartQuantitySelector
         className="gap-8 p-6"
         selectedQuantity={selectedQuantity}

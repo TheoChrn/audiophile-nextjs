@@ -4,10 +4,10 @@
  
 @layer base {
   :root {
-    --background: hsl(0 0% 96%);
+    --background: hsl(0, 0%, 100%);
     --foreground: hsl(222.2 84% 4.9%);
 
-    --card: hsl(0 0% 95%);
+    --card: hsl(0, 0%, 95%);
     --card-foreground: hsl(0, 0%, 0%);
  
     --popover: hsl(0 0% 100%);

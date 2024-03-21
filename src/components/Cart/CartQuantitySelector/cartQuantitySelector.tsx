@@ -14,7 +14,7 @@ const CartQuantitySelector = ({
   className: string;
 }) => {
   return (
-    <div
+    <form
       className={`grid grid-cols-[16px_16px_16px] ${className} size-fit bg-card text-base`}
     >
       <Button
@@ -55,7 +55,7 @@ const CartQuantitySelector = ({
       >
         +
       </Button>
-    </div>
+    </form>
   );
 };
 

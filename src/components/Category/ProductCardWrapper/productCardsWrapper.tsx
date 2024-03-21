@@ -25,14 +25,15 @@ const ProductCardsWrapper = ({ category }: { category: string }) => {
     );
 
   if (isError || !data) throw new Error("Failed to fetch");
+
   const products = data;
 
   return (
     <>
-      {products.map((product, index) => (
-        <li key={product.id}>
-          <ProductCardWithButton product={product} index={index} />
-        </li>
+      {products.map((product) => (
+        <>
+          <ProductCardWithButton key={product.id} product={product} />
+        </>
       ))}
     </>
   );

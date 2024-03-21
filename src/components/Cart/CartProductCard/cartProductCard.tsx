@@ -1,4 +1,3 @@
-
 import { imageLoader } from "@/lib/utils";
 import { CartProduct } from "@/types/types";
 import Image from "next/image";
