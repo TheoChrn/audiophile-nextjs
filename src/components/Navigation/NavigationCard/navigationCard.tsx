@@ -10,22 +10,22 @@ const NavigationCard = () => {
       imageUrl:
         "/assets/shared/desktop/image-category-thumbnail-headphones.png",
       url: "/headphones",
-      height: 1,
-      width: 160,
+      height: 160,
+      width: 200,
     },
     {
       title: "Speakers",
       imageUrl: "/assets/shared/desktop/image-category-thumbnail-speakers.png",
       url: "/speakers",
-      height: 1,
-      width: 160,
+      height: 160,
+      width: 200,
     },
     {
       title: "Earphones",
       imageUrl: "/assets/shared/desktop/image-category-thumbnail-earphones.png",
       url: "/earphones",
-      height: 1,
-      width: 160,
+      height: 160,
+      width: 200,
     },
   ];
   return (
@@ -36,8 +36,8 @@ const NavigationCard = () => {
             key={index}
             className="relative flex-[0_0_100%] rounded bg-card md:flex-[0_0_32%]"
           >
-            <div className="relative flex flex-col items-center justify-center gap-y-[1.7rem] py-12 ">
-              <figure className="absolute translate-y-[-55%]">
+            <div className="relative flex flex-col items-center justify-center gap-y-[1.5rem] py-[2.2rem] lg:py-[3rem] ">
+              <figure className="absolute translate-y-[-40%] lg:translate-y-[-50%]">
                 <Image
                   src={card.imageUrl}
                   alt={`Image produit ${card.title}`}
@@ -45,13 +45,13 @@ const NavigationCard = () => {
                   width={card.width}
                 />
               </figure>
-              <span className="mt-[8.6rem] text-base font-bold">
+              <span className="mt-[calc(8.8rem_-_1.1rem)] lg:mt-[calc(10.9rem_-_1.5rem)] text-base font-bold">
                 {card.title}
               </span>
               <LinkButton
                 href={card.url}
                 variant="nav"
-                customClassName="flex gap-[1.3rem] items-center hover:text-accent text-subtitle leading-subtitle tracking-subtitle hover:pr-small"
+                customClassName="flex gap-[1.3rem] items-center hover:text-accent text-subtitle leading-subtitle tracking-subtitle hover:pl-small text-black/50 px-[0] py-[0] p-[0] border-0"
               >
                 <span>shop</span>
                 <ArrowIcon />
