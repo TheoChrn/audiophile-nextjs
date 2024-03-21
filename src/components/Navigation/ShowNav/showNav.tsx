@@ -10,7 +10,7 @@ const ShowNav = () => {
   const isMobile = useIsMobile();
   const isMenuOpen = useMenuStore((state) => state.menuIsOpen);
   return (
-    <nav className="order-1 flex items-center justify-center text-subtitle lg:order-3">
+    <nav className="order-1 h-full flex items-center justify-center text-subtitle lg:order-3">
       {(isMobile === undefined || isMobile) && (
         <>
           <BurgerTrigger />
@@ -25,7 +25,7 @@ const ShowNav = () => {
       )}
       {(isMobile === undefined || !isMobile) && (
         <menu
-          className={`absolute inset-x-0 top-full z-10 hidden h-fit flex-col justify-center gap-4 bg-secondary duration-200 lg:static lg:flex lg:flex-row lg:gap-[3.6rem]`}
+          className={`absolute inset-x-0 top-full z-10 hidden h-full flex-col justify-center gap-4 duration-200 lg:static lg:flex lg:flex-row lg:gap-[3.6rem]`}
         >
           <DesktopNavigation />
         </menu>

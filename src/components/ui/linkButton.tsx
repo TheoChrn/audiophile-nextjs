@@ -15,11 +15,11 @@ const variants = {
   default: "text-primary-foreground",
   primary: "text-primary-foreground bg-primary",
   secondary:
-    "text-secondary-foreground bg-secondary border-secondary hover:bg-secondary-hover hover:border-secondary-hover",
+    "text-secondary-foreground bg-secondary border-secondary hover:bg-secondary-hover hover:border-secondary-hover px-12 py-6",
   outline:
-    "text-secondary border-secondary hover:bg-secondary hover:text-secondary-foreground",
+    "text-secondary border-secondary hover:bg-secondary hover:text-secondary-foreground px-12 py-6",
   accent:
-    "bg-accent text-accent-foreground border-accent hover:bg-accent-hover hover:border-accent-hover",
+    "bg-accent text-accent-foreground border-accent hover:bg-accent-hover hover:border-accent-hover px-12 py-6",
   nav: "border-none px-0 py-0 p-0 hover:text-accent",
 };
 type Variant =
@@ -40,7 +40,7 @@ const LinkButton = ({
   return (
     <Link
       {...linkProps}
-      className={`border-2 px-12 py-6 text-center text-subtitle uppercase  duration-200  ${variantClassName} ${customClassName}`}
+      className={`border-2  text-center text-subtitle uppercase  duration-200  ${variantClassName} ${customClassName}`}
     >
       {children}
     </Link>
