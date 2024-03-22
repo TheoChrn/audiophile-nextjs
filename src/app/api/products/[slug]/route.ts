@@ -1,7 +1,5 @@
 import { NextResponse } from "next/server"
 import data from "../../../../data/data.json"
-import { redirect } from 'next/navigation'
-import { Product } from "@/types/types"
 
 
 export async function GET(request: Request, context: any) {
