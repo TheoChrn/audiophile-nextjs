@@ -31,7 +31,7 @@ export default async function Category({
 
   console.log(products);
 
-  /*if (!products || products.length === 0) {
+  if (!products || products.length === 0) {
     await queryClient.prefetchQuery({
       queryKey: ["product", category],
       queryFn: () => getProduct(category),
@@ -44,7 +44,7 @@ export default async function Category({
     } else {
       notFound();
     }
-  }*/
+  }
 
   const dehydratedState = dehydrate(queryClient);
 
