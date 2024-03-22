@@ -4,6 +4,9 @@ export const getProductsByCategory = (category: string) => {
   return fetch(`${apiUrl}/categories/${category}`, {
     method: "GET",
     cache:"no-store"
+    headers: {
+      'Content-Type': 'application/json'
+      },
   }
   )
   .then((res) => {
