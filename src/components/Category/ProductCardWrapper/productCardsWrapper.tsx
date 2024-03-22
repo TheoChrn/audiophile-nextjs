@@ -7,7 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import Skeleton from "../../ProductCard/productCardSkeleton";
 
 const ProductCardsWrapper = ({ category }: { category: string }) => {
-  const { data, isLoading, isError } = useQuery<Product[], Error>({
+  const { data, isLoading, isError, error } = useQuery<Product[], Error>({
     queryKey: ["products", category],
     queryFn: () => getProductsByCategory(category),
     retry: false,
@@ -24,7 +24,8 @@ const ProductCardsWrapper = ({ category }: { category: string }) => {
       </>
     );
 
-  if (isError || !data) throw new Error("Failed to fetch");
+  if (isError || data === undefined)
+    throw new Error(`"Failed to fetch" ${error}`);
 
   const products = data;
 
