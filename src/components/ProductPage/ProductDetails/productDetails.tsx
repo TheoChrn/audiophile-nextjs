@@ -29,7 +29,7 @@ const ProductDetails = ({ product }: { product: Product }) => {
     <section className="flex flex-col gap-x-[12.5rem] gap-y-48 lg:flex-row">
       <section className="flex flex-col gap-y-small lg:flex-[0_0_60%] lg:gap-y-medium ">
         <h2 className="text-h5 uppercase md:text-h3">Features</h2>
-        <p className="text-base">
+        <p className="text-base text-primary-body">
           {features[0]}
           <br />
           <br />
@@ -40,9 +40,9 @@ const ProductDetails = ({ product }: { product: Product }) => {
         <h2 className="text-h5 uppercase md:flex-[0_0_50%] md:text-h3 lg:flex-none">
           In the box
         </h2>
-        <ul className="grid gap-y-[0.8rem] md:flex-auto lg:flex-none">
+        <ul className="grid gap-y-[0.8rem] md:flex-auto lg:flex-none text-primary-body font-bold">
           {product.includes.map((include, index) => (
-            <li key={index} className="flex gap-x-[2.1rem] text-base ">
+            <li key={index} className="flex gap-x-[2.1rem] text-base">
               <span className="font-bold text-accent">{include.quantity}x</span>
               <p>{include.item}</p>
             </li>

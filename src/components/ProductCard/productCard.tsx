@@ -40,7 +40,7 @@ const ProductCard = ({
         <h1 className="max-w-[15ch] text-h4 text-secondary md:text-h2">
           {product.name}
         </h1>
-        <p className="text-base max-w-[57.2rem] lg:max-w-[none] text-black/75 ">
+        <p className="text-base max-w-[57.2rem] lg:max-w-[none] text-primary-body ">
           {product.description}
         </p>
 

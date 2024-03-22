@@ -25,7 +25,7 @@ const CartSheet = ({ cartCookie }: { cartCookie: CartCookie[] }) => {
             </svg>
           </DialogTrigger>
           <DialogContent
-            className={`top-[34rem] grid h-fit w-[90%] max-w-[37.7rem] gap-y-medium rounded bg-white px-[2.8rem] py-[3.1rem] text-base sm:max-w-[37.7rem] md:left-3/4 custom:left-1/2 custom:ml-[calc((1110px_-_377px)_/2)]`}
+            className={`absolute translate-y-0 top-[12rem] grid h-fit w-[90%] max-w-[37.7rem] gap-y-medium rounded bg-white px-[2.8rem] py-[3.1rem]  text-base sm:max-w-[37.7rem] md:left-3/4 custom:left-1/2 custom:ml-[calc((1110px_-_377px)_/2)]`}
           >
             {!!cartCookie.length ? (
               <CartContent cartCookie={cartCookie} />

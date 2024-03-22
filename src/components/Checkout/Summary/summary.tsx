@@ -17,7 +17,7 @@ const Item = ({
 }) => {
   return (
     <div className={`flex justify-between uppercase ${className}`}>
-      <span className="text-base font-bold text-black/50">{value}</span>
+      <span className="text-base font-bold text-primary-body">{value}</span>
       <span className={`text-h6 ${variant}`}>
         ${amount.toLocaleString("en-US")}
       </span>

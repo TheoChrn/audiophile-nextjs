@@ -2,7 +2,6 @@ import React from "react";
 import CartProductCard from "./cartProductCard";
 import { CartProduct } from "@/types/types";
 
-
 const CartProductCardWithQuantity = ({ product }: { product: CartProduct }) => {
   return (
     <CartProductCard
@@ -10,7 +9,7 @@ const CartProductCardWithQuantity = ({ product }: { product: CartProduct }) => {
       size={50}
       image={`/assets/cart/image-${product.slug}.jpg`}
     >
-      <span className="justify-self-end text-base font-bold text-black/50">
+      <span className="justify-self-end text-base font-bold text-primary-body">
         x{product.quantity}
       </span>
     </CartProductCard>

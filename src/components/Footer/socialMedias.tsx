@@ -9,14 +9,17 @@ const SocialMedias = () => {
     {
       icon: <FacebookIcon />,
       url: "/",
+      name: "Facebook",
     },
     {
       icon: <InstagramIcon />,
       url: "/",
+      name: "Instagram",
     },
     {
       icon: <TwitterIcon />,
       url: "/",
+      name: "Twitter",
     },
   ];
 
@@ -25,7 +28,10 @@ const SocialMedias = () => {
       {socialMedia.map((media, index) => {
         return (
           <li key={index} className="group">
-            <Link href={media.url}>{media.icon}</Link>
+            <Link href={media.url}>
+              {media.icon}
+              <span className="sr-only">{media.name}</span>
+            </Link>
           </li>
         );
       })}

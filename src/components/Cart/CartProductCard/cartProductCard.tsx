@@ -30,7 +30,7 @@ const CartProductCard = ({
         <h4 className="truncate text-base font-bold">
           {product.name.split(" ").shift()}
         </h4>
-        <p className="text-[1.4rem] font-bold text-black/50">
+        <p className="text-[1.4rem] font-bold text-primary-body">
           $ {product.price.toLocaleString("en-US")}
         </p>
       </div>

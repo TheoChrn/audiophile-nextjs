@@ -210,7 +210,7 @@ const OrderForm = ({ cartProducts }: { cartProducts: CartProduct[] }) => {
   return (
     <>
       <Button
-        className="absolute -top-20 bg-[none] p-0 capitalize text-black/50 shadow-none hover:text-accent"
+        className="absolute -top-20 bg-[none] p-0 capitalize text-primary-body shadow-none hover:text-accent"
         onClick={() => router.back()}
       >
         Go back
