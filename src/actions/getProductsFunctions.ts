@@ -1,3 +1,5 @@
+"use server"
+
 import { apiUrl } from "@/lib/apiurl"
 
 export const getProductsByCategory = async (category: string) => {
@@ -10,16 +12,16 @@ export const getProductsByCategory = async (category: string) => {
   }
   )
   .then((res) => {
-   return res.json()
+    return res.json()
   })
   .then((result) => {
     return result
   }
   )
-  .catch((err) =>  {
-    throw new Error('Failed to fetch data')
-  })
+  .catch((err) => {
+    throw new Error('Failed to fetchData')})
 }
+
 
 export const getProduct = async (slug: string) => {
   return fetch(`${apiUrl}/products/${slug}`, {
