@@ -60,9 +60,19 @@ function updateExistingProduct(cart: CartCookie[], index: number, newProduct: Ca
   if (isFromCart && newProduct.quantity === 0) {
     cart.splice(index, 1);
   } else if (isFromCart) {
-    selectedMoreThanMaxQuantity ? new Error("Can't exceed maximum quantity") : existingProduct.quantity = newProduct.quantity
+    if (selectedMoreThanMaxQuantity) {
+      throw new Error("Can't exceed maximum quantity")
+     } else {
+      existingProduct.quantity = newProduct.quantity
+     }
+   
   } else {
-    exceedMaxQuantity ? new Error("Can't exceed maximum quantity") : existingProduct.quantity += newProduct.quantity
+    if (exceedMaxQuantity) {
+     throw new Error("Can't exceed maximum quantity")
+    } else {
+      existingProduct.quantity += newProduct.quantity
+    }
+
   }
  
   

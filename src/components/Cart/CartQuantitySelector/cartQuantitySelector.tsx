@@ -19,7 +19,7 @@ const CartQuantitySelector = ({
       className={`grid grid-cols-[15px_20px_15px] ${className} size-fit bg-card text-base`}
     >
       <Button
-        variant={selectedQuantity === 1 ? "ghost" : "select"}
+        variant={selectedQuantity === 0 ? "ghost" : "select"}
         size={"select"}
         className="w-full text-base"
         onClick={(e) => {

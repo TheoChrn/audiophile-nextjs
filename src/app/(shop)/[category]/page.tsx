@@ -29,8 +29,6 @@ export default async function Category({
 
   const products = queryClient.getQueryData<Product[]>(["products", category]);
 
-  console.log(products);
-
   if (!products || products.length === 0) {
     await queryClient.prefetchQuery({
       queryKey: ["product", category],
