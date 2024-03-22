@@ -49,13 +49,11 @@ export default async function Category({
   return (
     <>
       <CategoryBanner value={category} />
-      <main>
-        <Wrapper className="mb-48 mt-[6.4rem] lg:mb-64">
-          <HydrationBoundary state={dehydratedState}>
-            <ProductsByCategory category={category} />
-          </HydrationBoundary>
-        </Wrapper>
-      </main>
+      <Wrapper className="mb-48 mt-[6.4rem] lg:mb-64">
+        <HydrationBoundary state={dehydratedState}>
+          <ProductsByCategory category={category} />
+        </HydrationBoundary>
+      </Wrapper>
     </>
   );
 }

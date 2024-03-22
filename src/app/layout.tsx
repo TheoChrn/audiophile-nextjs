@@ -6,6 +6,7 @@ import { Toaster } from "sonner";
 import Providers from "./contexts/providers";
 import "./globals.css";
 import Footer from "@/components/Footer/footer";
+import CheckIcon from "@/components/Icons/checkIcon";
 
 const inter = Manrope({
   weight: ["400", "500", "600", "700"],
@@ -52,7 +53,19 @@ export default async function RootLayout({
           <Navigation />
           {children}
         </Providers>
-        <Toaster />
+        <Toaster
+          icons={{
+            success: <CheckIcon size={20} />,
+          }}
+          toastOptions={{
+            unstyled: true,
+            classNames: {
+              toast:
+                "bg-primary border border-gray-200 shadow-xl flex py-6 px-10 items-center gap-4 w-[90%] sm:w-full sm:max-w-[35rem] rounded",
+              title: "text-base text-primary-body",
+            },
+          }}
+        />
         <Footer />
       </body>
     </html>

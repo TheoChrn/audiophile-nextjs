@@ -1,3 +1,4 @@
+import About from "@/components/About/about";
 import HeroBanner from "@/components/Home/HeroBanner/heroBanner";
 import LastProducts from "@/components/Home/LastProducts/lastProducts";
 import NavigationCard from "@/components/Navigation/NavigationCard/navigationCard";
@@ -11,6 +12,7 @@ export default async function Home() {
         <Wrapper className="grid gap-y-[12rem] md:gap-y-[9.6rem] lg:gap-y-[16.8rem]">
           <NavigationCard />
           <LastProducts />
+          <About />
         </Wrapper>
       </main>
     </>
