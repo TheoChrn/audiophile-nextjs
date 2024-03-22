@@ -8,12 +8,12 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
+    <main>
       {children}
       <Wrapper className="mb-48 mt-[17.2rem] lg:mt-[24rem] grid gap-[12rem] lg:my-64 md:gap-y-[16rem]">
         <NavigationCard />
         <About />
       </Wrapper>
-    </>
+    </main>
   );
 }

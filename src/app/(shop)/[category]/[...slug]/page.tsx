@@ -37,13 +37,11 @@ export default async function Product({
 
   return (
     <>
-      <main>
-        <Wrapper className="mb-48 mt-[6.4rem] grid gap-y-[8.8rem] md:gap-y-48 lg:mb-64 lg:gap-y-64">
-          <HydrationBoundary state={dehydratedState}>
-            <RenderProductPage slug={slug} />
-          </HydrationBoundary>
-        </Wrapper>
-      </main>
+      <Wrapper className="mb-48 mt-[6.4rem] grid gap-y-[8.8rem] md:gap-y-48 lg:mb-64 lg:gap-y-64">
+        <HydrationBoundary state={dehydratedState}>
+          <RenderProductPage slug={slug} />
+        </HydrationBoundary>
+      </Wrapper>
     </>
   );
 }
