@@ -15,6 +15,7 @@
  
     --primary: hsl(0, 0%, 100%);
     --primary-foreground: hsl(0, 0%, 0%);
+    --primary-body: hsla(0, 0%, 0%, 0.5);
     --primary-darken: hsl(0, 0%, 100%, 75%); 
     --primary-darker: hsl(0, 0%, 100%, 55%); 
     --primary-darkest: hsl(0, 0%, 100%, 35%); 

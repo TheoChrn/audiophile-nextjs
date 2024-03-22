@@ -11,6 +11,7 @@ const Header = ({ children }: { children: React.ReactNode }) => {
       <Wrapper className="relative flex opacity-0 -translate-y-1/4 h-36 items-center justify-between animate-fade-in-top delay-100">
         <Bar />
         <Link href={"/"} className="order-2 flex items-center">
+          <span className="sr-only">Logo</span>
           <Logo />
         </Link>
         {children}
