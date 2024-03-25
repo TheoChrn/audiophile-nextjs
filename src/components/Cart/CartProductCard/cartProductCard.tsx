@@ -16,7 +16,7 @@ const CartProductCard = ({
 }) => {
   return (
     <article className="grid grid-cols-[64px_1fr_1fr] items-center gap-x-[1.6rem] gap-y-small">
-      <figure>
+      <figure className="">
         <Image
           src={image || product.image.mobile}
           alt={`Image du produt ${product.name}`}

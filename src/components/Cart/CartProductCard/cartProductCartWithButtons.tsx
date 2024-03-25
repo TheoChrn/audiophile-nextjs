@@ -101,6 +101,7 @@ const CartProductCardWithButtons = ({ product }: { product: CartProduct }) => {
   return (
     <CartProductCard product={product}>
       <CartQuantitySelector
+        variant={selectedQuantity === 0 ? "ghost" : "select"}
         className={"gap-[1.3rem] justify-self-end px-[1.15rem] py-[0.7rem]"}
         handleQuantity={handleCartButtons}
         handleChange={handleChange}

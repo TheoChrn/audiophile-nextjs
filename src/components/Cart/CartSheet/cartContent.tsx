@@ -108,7 +108,11 @@ const CartContent = ({ cartCookie }: { cartCookie: CartCookie[] }) => {
       <DialogFooter className="flex flex-col gap-y-small">
         {!isProductLoading ? (
           <span className="flex w-full justify-between text-base uppercase">
-            Total <strong className="text-h6 font-bold"> $ {amount}</strong>
+            Total{" "}
+            <strong className="text-h6 font-bold">
+              {" "}
+              $ {amount.toLocaleString("en-US")}
+            </strong>
           </span>
         ) : (
           <span className="flex w-full justify-between text-base uppercase">

@@ -3,6 +3,11 @@
 import { CartCookie } from "@/types/types";
 import { cookies } from "next/headers";
 
+interface ErrorCodeMap {
+  [key: string]: string; // Cela dit que chaque clé est une chaîne, mappant à une valeur de chaîne
+}
+
+
 const MAX_QUANTITY = 99;
 const MIN_QUANTITY = 1;
 const CART_COOKIE_NAME = 'cart';
@@ -10,11 +15,13 @@ const CART_COOKIE_NAME = 'cart';
 const cartCookieOptions = { httpOnly: true, path: '/' };
 const emptyCartCookieOptions = { ...cartCookieOptions, expires: new Date(0) };
 
+const errorCodes: ErrorCodeMap  = {
+  "MAX_QUANTITY_EXCEEDED": "Can't exceed maximum quantity",
+  "INVALID_QUANTITY": "Invalid quantity",
+  // Ajoutez d'autres codes d'erreur et messages ici
+};
+
 // Définition simplifiée de l'interface pour un produit dans le panier
-interface CartProduct {
-  id: string;
-  quantity: number;
-}
 
 async function setCart(cart: CartCookie[]) {
   if (cart.length === 0) {
@@ -30,8 +37,8 @@ async function setCart(cart: CartCookie[]) {
 
 export async function addToCart(newProduct: CartCookie, isFromCart: boolean) {
   try {
-    if (newProduct.quantity > 99) throw new Error("Can't exceed maximum quantity")
-    if (isNaN(newProduct.quantity)) throw new Error("Invalid quantity")
+    if (newProduct.quantity > 99) throw new Error(errorCodes.MAX_QUANTITY_EXCEEDED)
+    if (isNaN(newProduct.quantity)) throw new Error(errorCodes.INVALID_QUANTITY)
     const cartCookie = cookies().get(CART_COOKIE_NAME);
     const cart: CartCookie[] = cartCookie ? JSON.parse(cartCookie.value) : [];
     const existingProductIndex = cart.findIndex(product => product.id === newProduct.id);
@@ -46,7 +53,9 @@ export async function addToCart(newProduct: CartCookie, isFromCart: boolean) {
     const res = await setCart(cart);
     return { success: true, message: res.message};
   } catch (error) {
-    throw new Error(getErrorMessage(error)) 
+    const errorMessage = getErrorMessage(error);
+    // Retournez ou loguez l'erreur de manière appropriée
+    return {success: false, message: errorMessage}
   }
 }
 
@@ -61,14 +70,14 @@ function updateExistingProduct(cart: CartCookie[], index: number, newProduct: Ca
     cart.splice(index, 1);
   } else if (isFromCart) {
     if (selectedMoreThanMaxQuantity) {
-      throw new Error("Can't exceed maximum quantity")
+      throw new Error(errorCodes.MAX_QUANTITY_EXCEEDED)
      } else {
       existingProduct.quantity = newProduct.quantity
      }
    
   } else {
     if (exceedMaxQuantity) {
-     throw new Error("Can't exceed maximum quantity")
+      throw new Error(errorCodes.MAX_QUANTITY_EXCEEDED)
     } else {
       existingProduct.quantity += newProduct.quantity
     }
@@ -80,11 +89,18 @@ function updateExistingProduct(cart: CartCookie[], index: number, newProduct: Ca
 
 function addNewProduct(cart :CartCookie[], newProduct: CartCookie) {
   if (newProduct.quantity < MIN_QUANTITY || newProduct.quantity > MAX_QUANTITY) {
-    throw new Error('Invalid quantity');
+    throw new Error(errorCodes.INVALID_QUANTITY)
   }
   cart.push(newProduct);
 }
 
 function getErrorMessage(error: unknown) {
-  return error instanceof Error ? error.message : "An unknown error occurred";
+  const defaultMessage = "An unexpected issue occurred, please try again.";
+  if (error instanceof Error) {
+    // Utilisez directement error.message comme clé pour chercher dans errorCodes
+    const errorCode = error.message;
+    // Renvoie le message d'erreur spécifique basé sur errorCode, ou un message par défaut si non trouvé
+    return errorCode || defaultMessage;
+  }
+  return defaultMessage;
 }

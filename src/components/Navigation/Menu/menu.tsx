@@ -12,7 +12,7 @@ const Menu = () => {
         <li key={url} className="h-full">
           <LinkButton
             href={url}
-            customClassName={`h-full flex items-center hover:text-accent ${
+            customClassName={`h-full flex items-center hover:text-accent  ${
               pathName === url && "text-accent"
             }`}
             variant="nav"

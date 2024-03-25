@@ -21,16 +21,16 @@ const AddToCartButton = ({
       return addToCart(product, false);
     },
     onSuccess: (data) => {
-
       if (data?.success) {
         queryClient.invalidateQueries({
           queryKey: ["cartProduct", product.slug],
         });
         showToast("success", data.message);
+      } else {
+        showToast("error", data.message);
       }
     },
     onError: (error) => {
-
       showToast("error", error.message);
     },
   });

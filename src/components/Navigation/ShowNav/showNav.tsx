@@ -15,9 +15,9 @@ const ShowNav = () => {
         <>
           <BurgerTrigger />
           <menu
-            className={`absolute inset-x-0 top-full z-10 flex ${
-              isMenuOpen ? "py-5" : "py-0"
-            } flex-col justify-center h-fit gap-4 bg-secondary  lg:static lg:hidden lg:flex-row lg:gap-[3.6rem] `}
+            className={`absolute inset-x-0 top-full z-50 flex ${
+              isMenuOpen ? "py-5 px-[2rem] h-fit" : "py-0 h-0"
+            } flex-col justify-center bg-secondary text-secondary-foreground h-fit gap-4 lg:static lg:hidden lg:flex-row lg:gap-[3.6rem] transition-200 `}
           >
             <MobileNavigation />
           </menu>
@@ -25,7 +25,7 @@ const ShowNav = () => {
       )}
       {(isMobile === undefined || !isMobile) && (
         <menu
-          className={`absolute inset-x-0 top-full z-10 hidden h-full flex-col justify-center gap-4 duration-200 lg:static lg:flex lg:flex-row lg:gap-[3.6rem]`}
+          className={`absolute inset-x-0 top-full z-10 hidden h-1/2 flex-col justify-center gap-4 duration-200 lg:static lg:flex lg:flex-row lg:gap-[3.6rem]`}
         >
           <DesktopNavigation />
         </menu>
