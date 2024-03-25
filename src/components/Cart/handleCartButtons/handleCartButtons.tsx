@@ -37,6 +37,7 @@ const HandleCartButtons = ({ product }: { product: Product }) => {
   return (
     <div className="flex flex-wrap gap-[1.6rem]">
       <CartQuantitySelector
+        variant={selectedQuantity === 1 ? "ghost" : "select"}
         className="gap-8 p-6"
         selectedQuantity={selectedQuantity}
         handleChange={handleChange}
