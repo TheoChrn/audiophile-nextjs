@@ -55,7 +55,7 @@ export async function addToCart(newProduct: CartCookie, isFromCart: boolean) {
   } catch (error) {
     const errorMessage = getErrorMessage(error);
     // Retournez ou loguez l'erreur de manière appropriée
-    throw new Error(errorMessage);
+    return {success: false, message: errorMessage}
   }
 }
 

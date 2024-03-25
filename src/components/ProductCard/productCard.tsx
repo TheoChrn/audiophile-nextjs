@@ -21,7 +21,7 @@ const ProductCard = ({
       className={`grid gap-y-medium md:gap-y-[5.2rem] lg:flex lg:gap-x-[12.5rem] lg:even:flex-row lg:odd:flex-row-re ${className}`}
     >
       <figure
-        className={`relative h-[35.2rem] w-full overflow-hidden rounded lg:h-[56rem] lg:flex-[0_0_50%]`}
+        className={`relative h-[35.2rem] w-full overflow-hidden rounded lg:h-[56rem] lg:flex-[0_0_50%] z-[-1]`}
       >
         <Image
           src={product.image[device]}

@@ -3,7 +3,7 @@ import LinkButton from "@/components/ui/linkButton";
 
 const HeroBanner = () => {
   return (
-    <section className="z-[-1] relative bg-secondary bg-[url('/assets/home/mobile/image-header.jpg')] bg-cover bg-center  bg-no-repeat text-center  uppercase text-secondary-foreground mix-blend-darken md:bg-[url('/assets/home/tablet/image-header.jpg')] lg:bg-[url('/assets/home/desktop/image-hero.jpg')] lg:text-start">
+    <section className="bg-secondary bg-[url('/assets/home/mobile/image-header.jpg')] bg-cover bg-center  bg-no-repeat text-center  uppercase text-secondary-foreground  md:bg-[url('/assets/home/tablet/image-header.jpg')] lg:bg-[url('/assets/home/desktop/image-hero.jpg')] lg:text-start">
       <div className="bg-[rgb(0_0_0_/_0.42)]">
         <Wrapper>
           <div className="flex h-[51rem] flex-col items-center  justify-center gap-small lg:h-[63.9rem] lg:w-1/2  lg:items-start">
