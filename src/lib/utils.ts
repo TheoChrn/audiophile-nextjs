@@ -23,6 +23,7 @@ export const showToast = (type: 'success' | 'error', message: string | null) => 
 
 
 export const imageLoader = ({ src, width, quality }: ImageLoaderProps) => {
+  console.log(webUrl)
   return `${webUrl}/${src}?w=${width}&q=${quality || 75}`;
 };
 

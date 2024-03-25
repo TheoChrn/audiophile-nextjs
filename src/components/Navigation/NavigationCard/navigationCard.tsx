@@ -45,7 +45,7 @@ const NavigationCard = () => {
                   className="w-auto h-[15rem] lg:h-[20rem]"
                 />
               </figure>
-              <span className="mt-[calc(8.8rem_-_1.1rem)] lg:mt-[calc(10.9rem_-_1.5rem)] text-base lg:text-h6">
+              <span className="mt-[calc(8.8rem_-_1.1rem)] lg:mt-[calc(10.9rem_-_1.5rem)] text-base font-bold lg:text-h6">
                 {card.title}
               </span>
               <LinkButton
